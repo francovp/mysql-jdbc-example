@@ -73,7 +73,7 @@ public class CommonConnection {
      */
     private static void createStatementAndGetResultSet() throws SQLException {
         statement = connection.createStatement();
-        resultSet = statement.executeQuery("show processlist");
+        resultSet = statement.executeQuery("SHOW DATABASES;");
     }
 
     /**
