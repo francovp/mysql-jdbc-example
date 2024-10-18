@@ -32,9 +32,13 @@ public class CommonConnection {
 
             createConnection();
 
+            long startTime = System.currentTimeMillis();
             createStatementAndGetResultSet();
 
             traverseAndProcessResultSet();
+
+            long endTime = System.currentTimeMillis();
+            System.out.println("Time to process: " + (endTime - startTime) + " milliseconds");
 
             closeResources();
         } catch (Exception e) {
