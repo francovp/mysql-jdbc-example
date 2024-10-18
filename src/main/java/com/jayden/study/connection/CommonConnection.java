@@ -18,9 +18,9 @@ import java.sql.*;
  * @author jayden-lee
  */
 public class CommonConnection {
-    private static final String url = "jdbc:mysql://localhost:3306/mysql";
-    private static final String user = "user";
-    private static final String password = "password";
+    private static final String url = "jdbc:mysql://" + System.getenv("MYSQL_HOST") + ":3306/mysql"; // Environment variable for database URL
+    private static final String user = System.getenv("MYSQL_ADMIN_USER"); // Environment variable for database user
+    private static final String password = System.getenv("MYSQL_ADMIN_PASSWORD"); // Environment variable for database password
 
     private static Connection connection;
     private static Statement statement;
